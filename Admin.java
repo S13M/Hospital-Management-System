@@ -1,26 +1,39 @@
 import java.util.ArrayList;
+import java.util.*;
 
 class Admin extends User {
     ArrayList<User> registeredUsers;
 
-    public Admin(ArrayList<User> registeredUsers) {
-        super("Admin", "admin", "Admin123", "Admin");
-        this.registeredUsers = registeredUsers; // Dependency Injection
-    }
-
-    public Admin(String name, String userName, String password, String role) {
-        super(name, userName, password, role);
+    public Admin(String name, String userName, String password) {
+        super(name, userName, password, "Admin");
         this.registeredUsers = new ArrayList<>();
     }
 
-    public void displayAllUsers() {
-        for (int i = 0; i < registeredUsers.size(); i++) {
-            System.out.println(registeredUsers.get(i).toString());
+   /*
+    // Display feedback for both doctors and patients
+    public void displayFeedback(ArrayList<Integer> feedbackList, String userType) {
+        if (feedbackList.isEmpty()) {
+            System.out.println("No feedback available at this moment.");
+        } else {
+            System.out.println("Feedback for " + userType + ":");
+            for (Integer feedback : feedbackList) {
+                System.out.println("Rating: " + feedback);
+            }
         }
     }
 
-    @Override
+    // Display feedback for doctors
+    public void displayDoctorFeedback(Doctor doctor) {
+        displayFeedback(doctor.getDoctorFeedback(), "Doctor " + doctor.getName());
+    }
+
+    // Display feedback for patients
+    public void displayPatientFeedback(Patient patient) {
+        displayFeedback(patient.getPatientFeedback(), "Patient " + patient.getName());
+    } */
+
+
     public String toString() {
-        return super.toString() + " Admin. ";
+        return super.toString() + " Admin: ";
     }
 }
