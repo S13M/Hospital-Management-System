@@ -1,17 +1,36 @@
-public class Patient extends User{
-    private int patientId;
-    private String condition;
+class Patient extends User {
 
-    public Patient(String name, String userName, String password, String role, int patientId, String condition)
-    {
-        super(name, userName, password, role);
-        this.patientId = patientId;
-        this.condition = condition;
+    //private ArrayList<Integer> patientFeedback = new ArrayList<>();
+
+    Patient(String name, String userName, String password) {
+        super(name, userName, password, "Patient");
     }
 
-    @Override
-public String toString() {
-    return super.toString() + " PatientID: " + patientId + " Condition: " + condition;
-}
+    /*
+    public void giveFeedback(Scanner sc) {
+        System.out.println("On a scale of 0 to 10, how would you rate your experience with the hospital?");
+        int feedbackScore = sc.nextInt();
 
+        if (feedbackScore < 0 || feedbackScore > 10) {
+            System.out.println("Invalid feedback score. Please enter a number between 0 and 10.");
+        } else {
+            patientFeedback.add(feedbackScore);
+            System.out.println("Thank you for your feedback!");
+        }
+    }
+
+    public ArrayList<Integer> getPatientFeedback() {
+        return patientFeedback;
+    }
+    */
+
+    @Override
+    public String toString() {
+        return super.toString() + " ";
+    }
+
+    /* public void performPatientAction() {
+        System.out.println("Patient action performed.");
+        // Add patient-specific actions here
+    } */
 }
